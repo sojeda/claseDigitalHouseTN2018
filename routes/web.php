@@ -40,3 +40,7 @@ Route::get('/peliculas/buscar/{nombre}', 'PeliculasController@buscarPeliculaNomb
 Route::get('/peliculas/buscar/{nombre}/for', 'PeliculasController@buscarPeliculaNombreFor');
 
 Route::get('/blade', 'DigitalController@blade');
+
+Route::get('/actores', 'ActorController@directory');
+
+Route::get('/actor/{id}', 'ActorController@show');

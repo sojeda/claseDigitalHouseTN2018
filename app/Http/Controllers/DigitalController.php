@@ -8,6 +8,9 @@ class DigitalController extends Controller
 {
     public function index()
     {
+        Actor::get();
+
+        DB::table('actors')->get();
     	return 'Hola mundo';
     }
 
