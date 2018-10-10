@@ -39,8 +39,10 @@ Route::get('/peliculas/buscar/{nombre}', 'PeliculasController@buscarPeliculaNomb
 
 Route::get('/peliculas/buscar/{nombre}/for', 'PeliculasController@buscarPeliculaNombreFor');
 
-Route::get('/blade', 'DigitalController@blade');
+Route::get('/blade', 'DigitalController@blade');	
 
-Route::get('/actores', 'ActorController@directory');
+Route::get('/actores', 'ActorController@directory')->name('actor.index');
 
-Route::get('/actor/{id}', 'ActorController@show');
+Route::get('/actor/buscar', 'ActorController@search')->name('actor.search');
+
+Route::get('/actor/{id}', 'ActorController@show')->name('actor.show')->where('id', '[0-9]+');

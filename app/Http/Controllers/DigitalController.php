@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Actor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DigitalController extends Controller
 {
