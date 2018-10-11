@@ -23,6 +23,12 @@ class ActorController extends Controller
 
     public function search(Request $request)
     {
+        $this->validate($request, [
+            'search' => 'required'
+        ], [
+            'search.required' => 'Coloca un nombre'
+        ]);
+
         $actores = Actor::where('first_name', 'LIKE', '%' . $request->input('search'))->get();
 
         return view('actores', compact('actores'));
